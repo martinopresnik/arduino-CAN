@@ -4,10 +4,14 @@
 #ifndef CAN_H
 #define CAN_H
 
+
 #ifdef ARDUINO_ARCH_ESP32
-#include "ESP32SJA1000.h"
-#else
-#include "MCP2515.h"
+//#include "ESP32SJA1000.h"
+#ifndef ESP32_EXTERNAL_CAN
+//#define IGNORE_MCP2515
 #endif
+#endif
+
+#include "MCP2515.h"
 
 #endif

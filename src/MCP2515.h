@@ -1,7 +1,7 @@
 // Copyright (c) Sandeep Mistry. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-#ifndef ARDUINO_ARCH_ESP32
+//#ifndef IGNORE_MCP2515
 
 #ifndef MCP2515_H
 #define MCP2515_H
@@ -81,8 +81,6 @@ private:
   void modifyRegister(uint8_t address, uint8_t mask, uint8_t value);
   void writeRegister(uint8_t address, uint8_t value);
 
-  static void onInterrupt();
-
 private:
   SPISettings _spiSettings;
   int _csPin;
@@ -90,8 +88,7 @@ private:
   long _clockFrequency;
 };
 
-extern MCP2515Class CAN;
 
 #endif
 
-#endif
+//#endif
